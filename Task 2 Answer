@@ -1,0 +1,24 @@
+// Declaring all necessary variables globally to keep myself right (not sure if I need to)
+const numbers = [7, 14, 21, 28]; // Input array
+let max1 = -Infinity;  // Variable used to store the largest number
+let max2 = -Infinity;  // Variable used to store the second largest number
+let num;       // Declaring num globally to be used in the loop
+
+// Function im using to find the largest sum of two elements
+function findMaxSum() {
+    // Using a for loop to loop through the array to find the two largest numbers
+    for (num of numbers) {  // Using the global num variable I previously declared
+        if (num > max1) {
+            max2 = max1; // The current largest number becomes the second largest number
+            max1 = num;  // Updating the largest number
+        } else if (num > max2) {
+            max2 = num;  // Updating the second largest number
+        }
+    }
+
+    // Returning the sum of the two largest numbers
+    return max1 + max2;
+}
+
+// Calling the function and outputting the result
+console.log("Largest sum:", findMaxSum());  // Output should be Largest sum: 49 (21 + 28)

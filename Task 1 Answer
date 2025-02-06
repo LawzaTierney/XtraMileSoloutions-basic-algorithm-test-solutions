@@ -1,0 +1,29 @@
+// Declaring all necessary variables globally to keep myself right (not sure if I need to or not)
+const numbers = [5, 7, 5, 9]; // Input array
+let frequencyMap = {};  // Object used to count occurrences of each number
+let uniqueNumbers = []; // Array to store the unique numbers
+
+// Function I used to find all of the unique numbers
+function findUniqueNumbers() {
+    // Counting the occurrences of each number in the array I used using for loop and if else statements
+    for (let num of numbers) {
+        if (frequencyMap[num]) {
+            frequencyMap[num] += 1;
+        } else {
+            frequencyMap[num] = 1;
+        }
+    }
+
+    // Collecting the numbers that appear only once in the array using for loop and if statement 
+    for (let num of numbers) {
+        if (frequencyMap[num] === 1) {
+            uniqueNumbers.push(num);
+        }
+    }
+
+    // Outputting the result to the console using console.log
+    console.log("Unique numbers:", uniqueNumbers);
+}
+
+// Calling the completed function 
+findUniqueNumbers(); // Output should be: Unique numbers: [7, 9]
